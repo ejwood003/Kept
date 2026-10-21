@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { useActionFeedback } from "@/components/action-feedback";
 import { AppButton } from "@/components/app-button";
 import { ConfirmPanel } from "@/components/confirm-panel";
@@ -173,27 +172,15 @@ export function PlanBoard({ addSlug }: { addSlug?: string }) {
   const inRange = new Set(range);
 
   return (
-    <>
-      <section className="plan-hero" aria-label="Plan ahead">
-        <Image
-          src="/plan-food.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="plan-hero-media"
-        />
-        <div className="plan-hero-scrim" aria-hidden="true" />
-        <div className="plan-hero-content">
-          <h1 className="text-[clamp(1.75rem,3vw+1rem,2.5rem)]">Plan ahead</h1>
-          <p className="plan-hero-lede mt-2">
-            Choose the days you might cook, say how many people you are cooking
-            for, and see how much of each ingredient those recipes need.
-          </p>
-        </div>
-      </section>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-[clamp(1.75rem,3vw+1rem,2.5rem)]">Plan ahead</h1>
+        <p className="mt-2 max-w-2xl text-muted-foreground">
+          Choose the days you might cook, say how many people you are cooking
+          for, and see how much of each ingredient those recipes need.
+        </p>
+      </div>
 
-      <div className="page-shell page-shell-wide space-y-8 py-[clamp(1.25rem,3vw,2.5rem)]">
       <section className="ds-panel p-4 sm:p-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
           <label className="block text-sm lg:w-44">
@@ -358,8 +345,7 @@ export function PlanBoard({ addSlug }: { addSlug?: string }) {
           </li>
         ))}
       </ul>
-      </div>
-    </>
+    </div>
   );
 }
 

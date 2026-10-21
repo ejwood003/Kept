@@ -1,3 +1,4 @@
+import { PageShell } from "@/components/page-shell";
 import { PlanBoard } from "@/components/plan-board";
 import { SiteHeader } from "@/components/site-header";
 
@@ -11,7 +12,9 @@ export default async function PlanPage({ searchParams }: PlanPageProps) {
   return (
     <div className="flex min-h-full flex-col">
       <SiteHeader current="plan" />
-      <PlanBoard addSlug={add} />
+      <PageShell wide>
+        <PlanBoard addSlug={add} />
+      </PageShell>
     </div>
   );
 }

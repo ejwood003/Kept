@@ -41,7 +41,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           href={href}
           className={classes}
           aria-current={props["aria-current"]}
-          aria-label={props["aria-label"]}
         >
           {children}
         </Link>
